@@ -55,51 +55,65 @@ public class UserValidator {
         return pattern.matcher(password4).matches();
     }
 
-    public static String validatefirstname(String fname) {
+    public static String validatefirstname(String fname) throws Exception {
         String firstnamepattern = "^[A-Z]{1}[a-z]{3,}$";
-        if (Pattern.matches(firstnamepattern, fname))
-            return "Happy";
-        else
-            return "Sad";
+        try {
+            if (Pattern.matches(firstnamepattern, fname))
+                return "Happy";
+        } catch (Exception e) {
+            throw new Exception("Invalid");
+        }
+        return "Sad";
     }
 
-    public static String validatelastname(String lname) {
+
+    public static String validatelastname(String lname) throws Exception {
         String lastnamepattern = "^[A-Z]{1}[a-z]{3,}$";
-        if (Pattern.matches(lastnamepattern, lname))
-            return "Happy";
-        else
-            return "Sad";
+        try {
+            if (Pattern.matches(lastnamepattern, lname))
+                return "Happy";
+        } catch (Exception e) {
+            throw new Exception("Invalid");
+        }
+        return "Sad";
     }
 
-    public static String validateemail(String email) {
+    public static String validateemail(String email) throws Exception{
         String emailnamepattern = "[0-9 a-z A-z]+([._+-][0-9 a-z A-Z]+)*"+"@([0-9 a-z A-Z][-]?)+[.][a-z A-Z]{2,4}([.][a-z A-Z]{2,4})?$";
-        if (Pattern.matches(emailnamepattern, email))
-            return "Happy";
-        else
-            return "Sad";
+        try {
+            if (Pattern.matches(emailnamepattern, email))
+                return "Happy";
+        } catch (Exception e) {
+            throw new Exception("Invalid");
+        }
+        return "Sad";
     }
 
-    public static String validatelMobNumber(String mobnum) {
+    public static String validatelMobNumber(String mobnum) throws Exception {
         String mobnumpattern = "^[1-9]{2}\\s{0,1}[0-9]{5}[0-9]{5}$";
-        if (Pattern.matches(mobnumpattern, mobnum))
-            return "Happy";
-        else
-            return "Sad";
+        try {
+            if (Pattern.matches(mobnumpattern, mobnum))
+                return "Happy";
+        } catch (Exception e) {
+            throw new Exception("Invalid");
+        }
+        return "Sad";
+
 
     }
-
-    public static String validatPassword(String password) {
-        String Passwordpattern = "[0-9 a-z A-Z]{8}";
-        if (Pattern.matches(Passwordpattern, password))
-            return "Happy";
-        else
-            return "Sad";
+    public static String validatPassword(String password) throws Exception{
+        String Passwordpattern = "[0-9a-zA-Z]{8}";
+        try {
+            if (Pattern.matches(Passwordpattern, password))
+                return "Happy";
+        } catch (Exception e) {
+            throw new Exception("Invalid");
+        }
+        return "Sad";
     }
-
-
 
     public static void main(String[] args) {
-        ArrayList<String> emails = new ArrayList<String>();
+        ArrayList<String>emails = new ArrayList<String>();
         emails.add("abc@yahoo.com");
         emails.add("abc-100@yahoo.com");
         emails.add("abc.100@yahoo.com");
@@ -125,10 +139,12 @@ public class UserValidator {
         }
     }
 
+
+
+
     public boolean validateEmailAddress(String email2Test) {
         Pattern pattern = Pattern.compile(email2Test);
         return pattern.matcher(email2Test).matches();
     }
-
 
 }
