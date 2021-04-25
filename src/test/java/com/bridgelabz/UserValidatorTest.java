@@ -37,4 +37,17 @@ public class UserValidatorTest {
         boolean result = UserValidator.validateEmail("abc.xyz@bl.co.in");
         Assertions.assertEquals(true,result);
     }
+
+    @Test
+    public void givenMobNumber_WhenProper_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = UserValidator.validateMobNumber("91 9689887638");
+        Assertions.assertEquals(true,result);
+    }
+    @Test
+    public void givenMobNumber_WhenDifferent_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = UserValidator.validateMobNumber("91 968988B638");
+        Assertions.assertEquals(false, result);
+    }
 }
