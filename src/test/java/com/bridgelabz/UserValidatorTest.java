@@ -64,4 +64,11 @@ public class UserValidatorTest {
         Assertions.assertEquals(true,result);
 
     }
+
+    @Test
+    public void givenPasswordRule3_WhenProper_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = UserValidator.validatePasswordRule3("jdF5iOj8");
+        Assertions.assertEquals(true, result);
+    }
 }
