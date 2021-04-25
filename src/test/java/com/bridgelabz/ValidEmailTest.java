@@ -51,11 +51,17 @@ public class ValidEmailTest {
     }
 
     @Test
-    public void givenEmailAsVar_ShouldReturnAsPerParameterizedResult() {
+    public void givenPassword_WhenProper_ShouldReturnHappy() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validateEmailAddress(email2Test);
-        Assertions.assertEquals(this.expectedResult, result);
+        String result = UserValidator.validatPassword("A6rtr59k");
+        Assertions.assertEquals("Happy", result);
     }
 
+    @Test
+    public void givenPassword_WhenNotProper_ShouldReturnSad() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validatPassword("A6@tr59k");
+        Assertions.assertEquals("Sad", result);
+    }
 
 }

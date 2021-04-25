@@ -79,4 +79,68 @@ public class UserValidatorTest {
         Assertions.assertEquals(false,result);
 
     }
+
+    @Test
+    public void givenFirstName_WhenProper_ShouldReturnHappy() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validatefirstname("Vinit");
+        Assertions.assertEquals("Happy", result);
+    }
+
+    @Test
+    public void givenFirstName_WhenShort_ShouldReturnSad() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validatefirstname("Vi");
+        Assertions.assertEquals("Sad", result);
+    }
+
+    @Test
+    public void givenLastName_WhenProper_ShouldReturnHappy() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validatelastname("Joshi");
+        Assertions.assertEquals("Happy", result);
+    }
+
+    @Test
+    public void givenLastName_WhenShort_ShouldReturnSad() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validatelastname("Jo");
+        Assertions.assertEquals("Sad", result);
+    }
+
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnHappy() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validateemail("abc.xyz@bl.co.in");
+        Assertions.assertEquals("Happy", result);
+    }
+
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnSad() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validateemail("abc.xyz@bl.co.in");
+        Assertions.assertEquals("Happy", result);
+    }
+
+    @Test
+    public void givenMobNumber_WhenNotProper_ShouldReturnSad() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validatelMobNumber("9689887638");
+        Assertions.assertEquals("Sad", result);
+    }
+
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnHappy() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validatPassword("A6rtr59k");
+        Assertions.assertEquals("Happy", result);
+    }
+
+    @Test
+    public void givenPassword_WhenNotProper_ShouldReturnSad() {
+        UserValidator validator = new UserValidator();
+        String result = UserValidator.validatPassword("A6@tr59k");
+        Assertions.assertEquals("Sad", result);
+    }
+
 }

@@ -55,11 +55,47 @@ public class UserValidator {
         return pattern.matcher(password4).matches();
     }
 
-
-    public boolean validateEmailAddress(String email2Test) {
-        Pattern pattern = Pattern.compile(email2Test);
-        return pattern.matcher(email2Test).matches();
+    public static String validatefirstname(String fname) {
+        String firstnamepattern = "^[A-Z]{1}[a-z]{3,}$";
+        if (Pattern.matches(firstnamepattern, fname))
+            return "Happy";
+        else
+            return "Sad";
     }
+
+    public static String validatelastname(String lname) {
+        String lastnamepattern = "^[A-Z]{1}[a-z]{3,}$";
+        if (Pattern.matches(lastnamepattern, lname))
+            return "Happy";
+        else
+            return "Sad";
+    }
+
+    public static String validateemail(String email) {
+        String emailnamepattern = "[0-9 a-z A-z]+([._+-][0-9 a-z A-Z]+)*"+"@([0-9 a-z A-Z][-]?)+[.][a-z A-Z]{2,4}([.][a-z A-Z]{2,4})?$";
+        if (Pattern.matches(emailnamepattern, email))
+            return "Happy";
+        else
+            return "Sad";
+    }
+
+    public static String validatelMobNumber(String mobnum) {
+        String mobnumpattern = "^[1-9]{2}\\s{0,1}[0-9]{5}[0-9]{5}$";
+        if (Pattern.matches(mobnumpattern, mobnum))
+            return "Happy";
+        else
+            return "Sad";
+
+    }
+
+    public static String validatPassword(String password) {
+        String Passwordpattern = "[0-9 a-z A-Z]{8}";
+        if (Pattern.matches(Passwordpattern, password))
+            return "Happy";
+        else
+            return "Sad";
+    }
+
 
 
     public static void main(String[] args) {
@@ -88,4 +124,11 @@ public class UserValidator {
             System.out.println("Valid");
         }
     }
+
+    public boolean validateEmailAddress(String email2Test) {
+        Pattern pattern = Pattern.compile(email2Test);
+        return pattern.matcher(email2Test).matches();
+    }
+
+
 }
