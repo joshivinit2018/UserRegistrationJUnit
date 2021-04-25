@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class UserValidator {
@@ -52,5 +53,39 @@ public class UserValidator {
     public static boolean validatePasswordRule4(String password4) {
         Pattern pattern = Pattern.compile(PASSWORDRULE4);
         return pattern.matcher(password4).matches();
+    }
+
+
+    public boolean validateEmailAddress(String email2Test) {
+        Pattern pattern = Pattern.compile(email2Test);
+        return pattern.matcher(email2Test).matches();
+    }
+
+
+    public static void main(String[] args) {
+        ArrayList<String> emails = new ArrayList<String>();
+        emails.add("abc@yahoo.com");
+        emails.add("abc-100@yahoo.com");
+        emails.add("abc.100@yahoo.com");
+        emails.add("abc111@abc.com");
+        emails.add("abc-100@abc.com.net");
+        emails.add("abc.100@abc.com.au");
+        emails.add("abc@1.com");
+        emails.add("abc@gmail.com.com");
+        emails.add("abc+100@gmail.com");
+        emails.add("abc");
+        emails.add("abc@.com.my");
+        emails.add("abc123@gmail.a");
+        emails.add("abc123@.com");
+        emails.add("abc123@.com.com");
+        emailvalidate(emails);
+    }
+
+    private static void emailvalidate(ArrayList<String> emails) {
+        String emailPattern = "[0-9 a-z A-z]+([._+-][0-9 a-z A-Z]+)*\"+\"@([0-9 a-z A-Z][-]?)+[.][a-z A-Z]{2,4}([.][a-z A-Z]{2,4})?$";
+        for (String data :emails) {
+            if (Pattern.matches(emailPattern, data));
+            System.out.println("Valid");
+        }
     }
 }
