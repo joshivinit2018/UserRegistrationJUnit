@@ -14,6 +14,6 @@ public class UserValidatorTest {
     public void givenFirstName_WhenShort_ShouldReturnFalse() {
         UserValidator validator = new UserValidator();
         boolean result = UserValidator.validateFirstName("Vi");
-        Assertions.assertEquals(false,result);
+        Assertions.assertEquals(false, result);
     }
 }
