@@ -50,4 +50,10 @@ public class UserValidatorTest {
         boolean result = UserValidator.validateMobNumber("91 968988B638");
         Assertions.assertEquals(false, result);
     }
+    @Test
+    public void givenPasswordRule1_WhenProper_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = UserValidator.validatePasswordRule1("jdhuihjn");
+        Assertions.assertEquals(true,result);
+    }
 }
