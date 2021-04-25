@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.UserValidatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-25T05:09:56" hostname="DESKTOP-011U31P" time="0.031">
+<testsuite name="com.bridgelabz.UserValidatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-25T05:26:38" hostname="DESKTOP-011U31P" time="0.035">
   <properties/>
-  <testcase name="givenLastName_WhenShort_ShouldReturnFalse()" classname="com.bridgelabz.UserValidatorTest" time="0.031"/>
+  <testcase name="givenEmail_WhenProper_ShouldReturnTrue()" classname="com.bridgelabz.UserValidatorTest" time="0.035"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

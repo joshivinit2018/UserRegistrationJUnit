@@ -30,4 +30,11 @@ public class UserValidatorTest {
         boolean result = UserValidator.validateLastName("jo");
         Assertions.assertEquals(false,result);
     }
+
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = UserValidator.validateEmail("abc.xyz@bl.co.in");
+        Assertions.assertEquals(true,result);
+    }
 }
